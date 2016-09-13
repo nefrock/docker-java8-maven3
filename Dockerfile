@@ -52,7 +52,7 @@ RUN apt-get install -y language-pack-en language-pack-ja
 RUN update-locale LANG=ja_JP.UTF-8
 ENV LANG en_US.UTF-8
 
-# ruby
-RUN apt-get install -y ruby2.3
+# essentials
+RUN apt-get install -y git ruby2.3
 
 CMD [""]
