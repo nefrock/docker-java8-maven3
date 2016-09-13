@@ -47,7 +47,12 @@ ENV PATH $JAVA_HOME/bin:$PATH
 # configure symbolic links for the java and javac executables
 RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 && update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 20000
 
-# install langs
+# generate, update locale
 RUN apt-get install -y language-pack-en language-pack-ja
+RUN update-locale LANG=ja_JP.UTF-8
+ENV LANG en_US.UTF-8
+
+# ruby
+RUN apt-get install -y ruby2.3
 
 CMD [""]
